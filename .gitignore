@@ -1,0 +1,14 @@
+// Environment
+.DS_Store
+.idea
+
+// Code compilation
+logs
+assets/css
+assets/js
+src/vendor
+
+// Package management
+.bower
+bower_modules
+node_modules

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html data-ng-app="alpha">
+    <head>
+        <title><%= title %></title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Sysen Ltd" />
+        <meta charset="UTF-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <link rel="icon" type="image/ico" href="/img/favicon.png" />
+
+        <link rel="stylesheet" href="/css/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="/css/main.min.css"/>
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body data-ng-controller="LayoutCtrl">
+        <div id="wrapper">
+            <header data-ng-include="header" class="navbar navbar-default navbar-fixed-top" role="navigation" id="navigation"></header>
+
+            <div data-ng-view id="body">
+                <div class="text-center">Loading <i class="fa fa-spinner fa-spin fa-lg"></i></div>
+            </div>
+
+            <footer data-ng-include="footer" class="navbar navbar-footer" id="footer"></footer>
+        </div>
+
+        <!-- 3rd Party Assets -->
+        <script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/jquery/jquery-cookie.min.js"></script>
+        <script type="text/javascript" src="/js/tinymce/tinymce.min.js"></script>
+
+        <!-- Angular Javascript -->
+        <script type="text/javascript" src="/js/angular/angular.min.js"></script>
+        <script type="text/javascript" src="/js/angular-ui/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/angular-ui/tinymce.min.js"></script>
+
+        <!-- Application -->
+        <script type="text/javascript" src="/js/app.min.js"></script>
+    </body>
+</html>

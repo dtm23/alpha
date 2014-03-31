@@ -1,0 +1,62 @@
+.navbar-default {
+  .navbar-text {
+    margin-left: 0;
+  }
+  .navbar-nav {
+    > li {
+      margin: 0;
+      > a {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        text-transform: uppercase;
+        &.active {
+          color: @link-default-active;
+        }
+        &:hover {
+          color: @link-default-hover;
+        }
+      }
+    }
+  }
+}
+
+.navbar-footer {
+  margin: 20px 0px 0px 0px;
+  height: 120px;
+  padding: 10px 0px;
+
+  .border-top-radius(0);
+  .border-bottom-radius(0);
+
+  color: @footer-text;
+  background-color: @footer-background;
+
+  a {
+    color: @footer-text;
+    &:hover {
+      color: @link-default-hover;
+    }
+  }
+
+  .nav-pills {
+    > li {
+      > a {
+        text-transform: uppercase;
+        &:hover {
+          background-color: inherit;
+        }
+        > .fa-stack {
+          color: lighten(@footer-background, 10%);
+          &:hover {
+            color: @link-default-hover;
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav-centered {
+  display: table;
+  margin: auto;
+}

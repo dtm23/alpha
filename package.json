@@ -1,0 +1,31 @@
+{
+    "name": "Project Alpha",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "grunt": "latest",
+        "express": "latest",
+        "request": "*",
+        "ejs": "*"
+    },
+    "devDependencies": {
+        "grunt-bower-task": "latest",
+        "grunt-contrib-concat": "latest",
+        "grunt-contrib-copy": "latest",
+        "grunt-contrib-uglify": "latest",
+        "grunt-contrib-watch": "latest",
+        "grunt-contrib-jshint": "latest",
+        "grunt-contrib-less": "latest",
+        "grunt-karma": "latest",
+        "karma-jasmine": "~0.2.0",
+        "karma-phantomjs-launcher": "^0.1.2",
+        "karma-firefox-launcher": "^0.1.3",
+        "karma-coverage-0.11": "^0.1.1",
+        "grunt-plato": "latest",
+        "grunt-express-server": "latest",
+        "grunt-concurrent": "latest"
+    }
+}

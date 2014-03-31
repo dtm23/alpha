@@ -1,0 +1,48 @@
+{
+    "name": "Project Alpha",
+    "version": "0.0.1",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_modules",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "jquery": "latest",
+        "jquery-cookie": "latest",
+        "angular": "latest",
+        "bootstrap": "latest",
+        "font-awesome": "latest",
+        "tinymce": "latest",
+        "angular-route": "latest",
+        "angular-cookies": "latest",
+        "angular-resource": "latest",
+        "angular-sanitize": "latest",
+        "angular-bootstrap": "latest",
+        "angular-ui-tinymce": "latest"
+    },
+    "devDependencies": {
+        "angular-mocks": "latest"
+    },
+    "exportsOverride": {
+        "jquery": {
+            ".": "dist/jquery.js"
+        },
+        "bootstrap": {
+            "less": "less/*.less",
+            "fonts": "fonts/*"
+        },
+        "font-awesome": {
+            "css": "css/*.min.css",
+            "fonts": "fonts/*"
+        },
+        "tinymce": {
+            ".": "tinymce.min.js",
+            "plugins": "plugins*",
+            "skins": "skins*",
+            "themes": "themes*"
+        }
+    }
+}
