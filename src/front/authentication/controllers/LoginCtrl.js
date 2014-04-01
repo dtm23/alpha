@@ -8,8 +8,8 @@ app.controller('LoginCtrl', ['$scope', '$location', '$cookies', 'AuthenticationS
         $auth.login('/api/auth/login', credentials, function(response) {
             $cookies.account = response;
             $location.path('/dashboard');
-        }, function() {
-            $scope.error = true;
+        }, function(error) {
+            $scope.error = error;
         });
     };
 }]);

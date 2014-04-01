@@ -35,11 +35,12 @@ describe('Authentication > Login Controller', function() {
     });
 
     it('should flag an error if credentials are not valid', function() {
-        http.expectPOST('/api/auth/login').respond(400);
+        http.expectPOST('/api/auth/login').respond(400, { code: 1, message: "Failed" });
         scope.submit({ username: "", password: "" });
         http.flush();
 
-        expect(scope.error).toBeTruthy();
+        expect(scope.error.code).toBe(1);
+        expect(scope.error.message).toBe("Failed");
         expect(location.path).not.toHaveBeenCalled();
     });
 });
