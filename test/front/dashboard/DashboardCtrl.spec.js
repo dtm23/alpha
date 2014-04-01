@@ -1,4 +1,4 @@
-describe('Layout Controller', function() {
+describe('Public > Registration Controller', function() {
     var ctrl, scope;
 
     beforeEach(module('alpha'));
@@ -7,9 +7,7 @@ describe('Layout Controller', function() {
         inject(function ($injector, $rootScope, $controller) {
             scope = $rootScope.$new();
 
-            scope.contactForm = { $valid: true };
-
-            ctrl = $controller('WelcomeCtrl', { $scope: scope });
+            ctrl = $controller('DashboardCtrl', { $scope: scope });
         });
     });
 

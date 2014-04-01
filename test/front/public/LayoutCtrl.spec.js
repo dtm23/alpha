@@ -1,4 +1,4 @@
-describe('Layout Controller', function() {
+describe('Public > Layout Controller', function() {
     var ctrl, scope;
 
     beforeEach(module('alpha'));
@@ -6,8 +6,6 @@ describe('Layout Controller', function() {
     beforeEach(function() {
         inject(function ($injector, $rootScope, $controller) {
             scope = $rootScope.$new();
-
-            scope.contactForm = { $valid: true };
 
             ctrl = $controller('LayoutCtrl', { $scope: scope });
         });

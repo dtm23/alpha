@@ -144,7 +144,7 @@ module.exports = function (grunt) {
         plato: {
             report: {
                 files: {
-                    'logs/plato': ['src/app/**/*.js', 'test/unit/**/*.js']
+                    'logs/plato': ['src/front/**/*.js', 'src/back/**/*.js']
                 }
             }
         }
