@@ -1,4 +1,4 @@
-describe('Public > Registration Controller', function() {
+describe('Dashboard > Dashboard Controller', function() {
     var ctrl, scope;
 
     beforeEach(module('alpha'));

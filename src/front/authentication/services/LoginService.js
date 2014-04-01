@@ -1,9 +1,6 @@
 app.factory('AuthenticationService', ['$http', function($http) {
 
     var login = function(url, credentials, successCallback, errorCallback) {
-        var url = url,
-            credentials = credentials;
-
         function connect () {
             return $http({
                 method: 'POST',
@@ -13,11 +10,9 @@ app.factory('AuthenticationService', ['$http', function($http) {
         }
 
         return connect();
-    }
+    };
 
     var logout = function(url, successCallback, errorCallback) {
-        var url = url;
-
         function disconnect() {
             return $http({
                 method: 'POST',
@@ -26,8 +21,7 @@ app.factory('AuthenticationService', ['$http', function($http) {
         }
 
         return disconnect();
-    }
+    };
 
-    var service = { login: login, logout: logout };
-    return service;
+    return { login: login, logout: logout };
 }]);
