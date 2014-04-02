@@ -208,6 +208,7 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('default', ['validate', 'bower', 'test', 'copy-assets', 'concurrent:deploy', 'express:prod']);
+    grunt.registerTask('build', ['validate', 'bower', 'copy-assets']);
     grunt.registerTask('test-only', ['validate', 'test']);
     grunt.registerTask('run', ['validate', 'express:dev', 'concurrent:development']);
 
