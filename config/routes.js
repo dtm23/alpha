@@ -1,13 +1,13 @@
 
 module.exports = function(app) {
 
-    var public = require('../src/back/public.js')();
+    var public = require('../src/back/public.js')(app);
     var auth   = require('../src/back/authentication.js')(app);
 
-    //// WEB
+    // PUBLIC
     app.get('/', public.index);
+    app.post('/api/register', public.register);
 
-    //// REST API
     //   AUTHENTICATION
     app.post('/api/auth/login', auth.login);
 

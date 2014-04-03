@@ -3,7 +3,10 @@ var tables = [
         '`id` int(11) NOT NULL AUTO_INCREMENT,' +
         '`username` VARCHAR(255) NOT NULL,' +
         '`password` VARCHAR(100) NOT NULL,' +
+        '`forename` VARCHAR(100),' +
+        '`surname` VARCHAR(100),' +
         '`created_on` TIMESTAMP NOT NULL,' +
+        'constraint uq_account_username unique (username),' +
         'constraint pk_account primary key (id)' +
     ');',
     'TRUNCATE TABLE `account`;'

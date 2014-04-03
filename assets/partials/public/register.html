@@ -5,7 +5,18 @@
                 <div class="col-sm-8 col-sm-offset-4"><h1>Registration</h1></div>
             </div>
 
-            <form name="registrationForm" class="form-horizontal" role="form">
+            <div class="row" data-ng-show="error">
+                <div class="col-sm-5 col-sm-offset-4">
+                    <div class="alert alert-warning alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true" data-ng-click="clear()">&times;</button>
+                        <h4>Warning!</h4>
+                        {{ error.message }}
+                    </div>
+                    <button class="btn btn-default" data-ng-click="clear()">Try Again</button>
+                </div>
+            </div>
+
+            <form name="registrationForm" class="form-horizontal" role="form" data-ng-hide="error">
 
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-4"><h3>Required Information</h3></div>
@@ -13,7 +24,7 @@
 
                 <div class="form-group has-feedback" data-ng-class="{'has-error': registrationForm.username.$dirty && registrationForm.username.$invalid, 'has-success': registrationForm.username.$valid}">
                     <label for="username" class="col-sm-4 control-label">Username</label>
-                    <div class="col-sm-4">
+                    <div class="col-sm-5">
                         <input id="username" name="username" type="email"
                                class="form-control" placeholder="Email Address" required="required"
                                data-ng-model="registration.username" />
@@ -26,7 +37,7 @@
                 </div>
                 <div class="form-group has-feedback" data-ng-class="{'has-error': registrationForm.password.$dirty && registrationForm.password.$invalid, 'has-success': registrationForm.password.$valid}">
                     <label for="password" class="col-sm-4 control-label">Password</label>
-                    <div class="col-sm-4">
+                    <div class="col-sm-5">
                         <input id="password" name="password" type="password"
                                class="form-control" placeholder="Password" required="required"
                                data-ng-model="registration.password" data-ng-change="validatePassword(registrationForm)" />
@@ -39,7 +50,7 @@
                 </div>
                 <div class="form-group has-feedback" data-ng-class="{'has-error': registrationForm.repeat.$dirty && registrationForm.repeat.$invalid, 'has-success': registrationForm.repeat.$valid}">
                     <label for="repeat" class="col-sm-4 control-label sr-only">Repeat Password</label>
-                    <div class="col-sm-4">
+                    <div class="col-sm-5">
                         <input id="repeat" name="repeat" type="password"
                                class="form-control" placeholder="Repeat Password" required="required"
                                data-ng-model="registration.repeat" data-ng-change="validatePassword(registrationForm)" />
@@ -56,8 +67,8 @@
 
                 <div class="form-group">
                     <label for="forename" class="col-sm-4 control-label">First Name</label>
-                    <div class="col-sm-4">
-                        <input id="forename" name="forename" type="email"
+                    <div class="col-sm-5">
+                        <input id="forename" name="forename" type="text"
                                class="form-control"
                                data-ng-model="registration.forename" />
                     </div>
@@ -65,16 +76,16 @@
 
                 <div class="form-group">
                     <label for="surname" class="col-sm-4 control-label">Last Name</label>
-                    <div class="col-sm-4">
-                        <input id="surname" name="surname" type="email"
+                    <div class="col-sm-5">
+                        <input id="surname" name="surname" type="text"
                                class="form-control"
                                data-ng-model="registration.surname" />
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <div class="col-sm-offset-4 col-sm-8">
-                        <button type="button" class="btn btn-default" data-ng-click="submit(registration)" data-ng-disabled="registrationForm.$invalid">Register</button>
+                    <div class="col-sm-offset-4 col-sm-5">
+                        <button type="button" class="btn btn-default btn-block" data-ng-click="submit(registration)" data-ng-disabled="registrationForm.$invalid">Register</button>
                     </div>
                 </div>
 
