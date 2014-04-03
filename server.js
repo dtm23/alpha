@@ -1,5 +1,6 @@
 // Dependencies
 var express = require('express'),
+    mysql = require('mysql'),
     http = require('http'),
     path = require('path');
 
@@ -28,9 +29,21 @@ app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'assets')));
 
-// Development Logging
+// Database Connection
+app.set('DB:connection', mysql.createPool({
+    //debug: ['ComQueryPacket', 'RowDataPacket'],
+    host: 'localhost',
+    port: 3306,
+    user: process.env.DB_USER || 'user',
+    password: process.env.DB_PASS || 'password',
+    database: process.env.DB_NAME || 'alpha'
+}));
+
+// Development
 if ('development' == app.get('env')) {
     app.use(express.errorHandler());
+    require('./config/database.tables.js')(app);
+    require('./config/database.data.js')(app);
 }
 
 // Routes

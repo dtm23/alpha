@@ -9,7 +9,7 @@
     "dependencies": {
         "grunt": "latest",
         "express": "latest",
-        "request": "*",
+        "mysql": "*",
         "ejs": "*"
     },
     "devDependencies": {
