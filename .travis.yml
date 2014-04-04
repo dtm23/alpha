@@ -2,3 +2,10 @@ language: node_js
 before_install: npm install -g grunt-cli
 install: npm install
 before_script: grunt build
+deploy:
+  provider: heroku
+  api_key:
+    secure: QGS6CKfrHKX2cK374aK+dyS/iNYZbG+22Z/F4wXTCtqin9G+6cyMleEDiMiShL8hc3/D0F1VRhsF3tAQe0AfVgl7U/NTQIV3fIBi6UA91MOp0J6NaKxf6W87yA2vMm1l9ElYw7cUbtJ3h4UGFk3YVhGmk/NZB7VcRtZYZno7YlE=
+  app: alpha-example
+  on:
+    repo: andrew-cunliffe/alpha

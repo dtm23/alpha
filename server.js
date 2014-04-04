@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'assets')));
 // Database Connection
 app.set('DB:connection', mysql.createPool({
     //debug: ['ComQueryPacket', 'RowDataPacket'],
-    host: 'localhost',
+    host: process.env.DB_HOST || 'localhost',
     port: 3306,
     user: process.env.DB_USER || 'user',
     password: process.env.DB_PASS || 'password',

@@ -33,9 +33,9 @@ Note: For general development once you have run the `grunt` command you can use 
 Setting up MySQL...
 
 - Settings can be found in server.js
-- Expectation is the MySQL host is localhost running on port 3306
-- Values are picked up from environment variables: DB_USER, DB_PASS, DB_NAME
-- Default values are: user, password, alpha
+- Expectation is the MySQL is running on port 3306
+- Values are picked up from environment variables: DB_HOST, DB_USER, DB_PASS, DB_NAME
+- Default values are: localhost, user, password, alpha
 
 Testing your code...
 
@@ -46,3 +46,7 @@ If using `grunt run` tests are not automatically executed to allow for responsiv
 This project was uploaded as a start point for several projects covering the main concerns frequently written. The package management assumes the future dependencies wont break the code base as it uses 'latest' in most instances.
 
 The intention is to keep this up to date and move other common assets across when the need to enrich this base is required.
+
+#### Running Example
+
+http://alpha-example.herokuapp.com
