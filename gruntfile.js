@@ -156,13 +156,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-less');
 
-    grunt.registerTask('load', 'Load Development Dependencies', function() {
-        grunt.loadNpmTasks('grunt-contrib-watch');
-        grunt.loadNpmTasks('grunt-karma');
-        grunt.loadNpmTasks('grunt-plato');
-        grunt.loadNpmTasks('grunt-express-server');
-        grunt.loadNpmTasks('grunt-concurrent');
-    });
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-plato');
+    grunt.loadNpmTasks('grunt-express-server');
+    grunt.loadNpmTasks('grunt-concurrent');
 
     grunt.registerTask('validate', 'Validate standards', function () {
         grunt.task.run('jshint');
