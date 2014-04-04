@@ -110,7 +110,7 @@ module.exports = function (grunt) {
                 }
             },
             deploy: {
-                tasks: ['build', 'less'],
+                tasks: ['compile', 'less'],
                 options: {
                     logConcurrentOutput: false
                 }
@@ -154,13 +154,15 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-karma');
-    grunt.loadNpmTasks('grunt-plato');
-    grunt.loadNpmTasks('grunt-express-server');
-    grunt.loadNpmTasks('grunt-concurrent');
 
+    grunt.registerTask('load', 'Load Development Dependencies', function() {
+        grunt.loadNpmTasks('grunt-contrib-watch');
+        grunt.loadNpmTasks('grunt-karma');
+        grunt.loadNpmTasks('grunt-plato');
+        grunt.loadNpmTasks('grunt-express-server');
+        grunt.loadNpmTasks('grunt-concurrent');
+    });
 
     grunt.registerTask('validate', 'Validate standards', function () {
         grunt.task.run('jshint');
@@ -171,8 +173,8 @@ module.exports = function (grunt) {
         grunt.task.run('plato');
     });
 
-    grunt.registerTask('build', 'Create build files', function () {
-        grunt.task.run(['less', 'concat', 'uglify:dist']);
+    grunt.registerTask('compile', 'Create build files', function () {
+        grunt.task.run(['concat', 'uglify:dist']);
     });
 
     grunt.registerTask('copy-assets', 'Copy required vendor assets', function () {
@@ -207,9 +209,9 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('default', ['validate', 'bower', 'test', 'copy-assets', 'concurrent:deploy', 'express:prod']);
-    grunt.registerTask('build', ['validate', 'bower', 'copy-assets']);
-    grunt.registerTask('test-only', ['validate', 'test']);
-    grunt.registerTask('run', ['validate', 'express:dev', 'concurrent:development']);
+    grunt.registerTask('default', ['load', 'validate', 'bower', 'test', 'copy-assets', 'concurrent:deploy', 'express:prod']);
+    grunt.registerTask('build', ['validate', 'bower', 'compile', 'less', 'copy-assets']);
+    grunt.registerTask('test-only', ['load', 'validate', 'test']);
+    grunt.registerTask('run', ['load', 'validate', 'express:dev', 'concurrent:development']);
 
 };
