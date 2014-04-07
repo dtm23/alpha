@@ -5,8 +5,10 @@ var tables = [
         '`password` VARCHAR(100) NOT NULL,' +
         '`forename` VARCHAR(100),' +
         '`surname` VARCHAR(100),' +
+        '`token` VARCHAR(40),' +
         '`created_on` TIMESTAMP NOT NULL,' +
         'constraint uq_account_username unique (username),' +
+        'constraint uq_account_token unique (token),' +
         'constraint pk_account primary key (id)' +
     ');'
 ];

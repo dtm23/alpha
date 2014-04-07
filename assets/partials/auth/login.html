@@ -6,7 +6,7 @@
             </div>
 
             <div class="row" data-ng-show="error">
-                <div class="col-sm-4 col-sm-offset-4">
+                <div class="col-sm-5 col-sm-offset-4">
                     <div class="alert alert-warning alert-dismissable">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true" data-ng-click="clear()">&times;</button>
                         <h4>Warning!</h4>
@@ -20,7 +20,7 @@
 
                 <div class="form-group has-feedback" data-ng-class="{'has-error': loginForm.username.$dirty && loginForm.username.$invalid, 'has-success': loginForm.username.$valid}">
                     <label for="username" class="col-sm-4 control-label">Username</label>
-                    <div class="col-sm-4">
+                    <div class="col-sm-5">
                         <input id="username" name="username" type="text"
                                class="form-control" required="required"
                                data-ng-model="credentials.username" />
@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group has-feedback" data-ng-class="{'has-error': loginForm.password.$dirty && loginForm.password.$invalid, 'has-success': loginForm.password.$valid}">
                     <label for="password" class="col-sm-4 control-label">Password</label>
-                    <div class="col-sm-4">
+                    <div class="col-sm-5">
                         <input id="password" name="password" type="password"
                                class="form-control" required="required"
                                data-ng-model="credentials.password" />
@@ -40,7 +40,17 @@
                 </div>
 
                 <div class="form-group">
-                    <div class="col-sm-offset-4 col-sm-8">
+                    <div class="col-sm-offset-4 col-sm-5">
+                        <div class="checkbox">
+                            <label>
+                                <input name="remember" type="checkbox" data-ng-model="credentials.remember"> Remember me
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-8 col-sm-offset-4">
                         <button class="btn btn-default" data-ng-click="submit(credentials)" data-ng-disabled="loginForm.$invalid">Login</button>
                     </div>
                 </div>
