@@ -1,3 +1,4 @@
+var crypto = require('crypto');
 
 module.exports = function(app) {
     return {
@@ -10,9 +11,12 @@ module.exports = function(app) {
 
             db.getConnection(function(err, connection) {
 
+                var shasum = crypto.createHash('sha1');
+                shasum.update(req.body.password);
+
                 var params = {
                     username: req.body.username,
-                    password: req.body.password,
+                    password: shasum.digest('hex'),
                     forename: req.body.forename,
                     surname: req.body.surname
                 };
