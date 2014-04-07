@@ -33,16 +33,18 @@ app.use(express.static(path.join(__dirname, 'assets')));
 app.set('DB:connection', mysql.createPool({
     //debug: ['ComQueryPacket', 'RowDataPacket'],
     host: process.env.DB_HOST || 'localhost',
-    port: 3306,
+    port: process.env.DB_PORT || 3306,
     user: process.env.DB_USER || 'user',
     password: process.env.DB_PASS || 'password',
     database: process.env.DB_NAME || 'alpha'
 }));
 
-// Development
+// Initialise the database
+require('./config/database.tables.js')(app);
+
+// Development (set NODE_ENV environment variable to trigger this)
 if ('development' == app.get('env')) {
     app.use(express.errorHandler());
-    require('./config/database.tables.js')(app);
     require('./config/database.data.js')(app);
 }
 

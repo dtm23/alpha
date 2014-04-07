@@ -8,10 +8,8 @@ var tables = [
         '`created_on` TIMESTAMP NOT NULL,' +
         'constraint uq_account_username unique (username),' +
         'constraint pk_account primary key (id)' +
-    ');',
-    'TRUNCATE TABLE `account`;'
+    ');'
 ];
-
 
 module.exports = function(app) {
     var db = app.get('DB:connection');

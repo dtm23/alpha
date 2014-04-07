@@ -1,4 +1,5 @@
 var data = [
+    { query: 'TRUNCATE TABLE `account`;' },
     { query: 'INSERT INTO `account` SET ?', params: [
         { username: 'admin@domain.com', password: 'qwerty' },
         { username: 'user@domain.com', password: 'qwerty' }

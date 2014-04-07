@@ -207,9 +207,9 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('default', ['load', 'validate', 'bower', 'test', 'copy-assets', 'concurrent:deploy', 'express:prod']);
+    grunt.registerTask('default', ['validate', 'bower', 'test', 'copy-assets', 'concurrent:deploy', 'express:prod']);
     grunt.registerTask('build', ['validate', 'bower', 'compile', 'less', 'copy-assets']);
-    grunt.registerTask('test-only', ['load', 'validate', 'test']);
-    grunt.registerTask('run', ['load', 'validate', 'express:dev', 'concurrent:development']);
+    grunt.registerTask('test-only', ['validate', 'test']);
+    grunt.registerTask('run', ['validate', 'express:dev', 'concurrent:development']);
 
 };
