@@ -19,6 +19,7 @@
         "grunt-plato": "latest",
         "grunt-express-server": "latest",
         "grunt-concurrent": "latest",
+        "grunt-karma-coveralls": "latest",
 
         "grunt": "latest",
         "express": "latest",
@@ -30,6 +31,7 @@
         "karma-jasmine": "~0.2.0",
         "karma-phantomjs-launcher": "^0.1.2",
         "karma-firefox-launcher": "^0.1.3",
+        "karma-spec-reporter": "latest",
         "karma-coverage-0.11": "^0.1.1"
     }
 }

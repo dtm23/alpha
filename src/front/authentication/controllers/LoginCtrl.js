@@ -5,7 +5,6 @@ app.controller('LoginCtrl', ['$scope', '$location', '$cookies', 'AuthenticationS
     };
 
     $scope.submit = function(credentials) {
-        console.log(credentials);
         $auth.login('/api/auth/login', credentials, function(response) {
             $cookies.account = response;
             $location.path('/dashboard');

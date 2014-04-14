@@ -5,7 +5,8 @@ module.exports = function (config) {
             'karma-jasmine',
             'karma-phantomjs-launcher',
             'karma-firefox-launcher',
-            'karma-coverage-0.11'
+            'karma-coverage-0.11',
+            'karma-spec-reporter'
         ],
 
         basePath: '.',
@@ -39,12 +40,12 @@ module.exports = function (config) {
         },
 
         reporters: [
-            "dots",
+            "spec",
             "coverage"
         ],
 
         coverageReporter: {
-            type: 'html',
+            type: 'lcov',
             dir: 'logs/karma/'
         }
     })

@@ -141,6 +141,14 @@ module.exports = function (grunt) {
                 singleRun: true
             }
         },
+        coveralls: {
+            options: {
+                debug: true,
+                coverage_dir: 'logs/karma/',
+                dryRun: true,
+                force: true
+            }
+        },
         plato: {
             report: {
                 files: {
@@ -161,6 +169,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-plato');
     grunt.loadNpmTasks('grunt-express-server');
     grunt.loadNpmTasks('grunt-concurrent');
+    grunt.loadNpmTasks('grunt-karma-coveralls');
 
     grunt.registerTask('validate', 'Validate standards', function () {
         grunt.task.run('jshint');
