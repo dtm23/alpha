@@ -25,8 +25,6 @@
         <div id="wrapper">
             <header data-ng-include="header" class="navbar navbar-default navbar-fixed-top" role="navigation" id="navigation"></header>
 
-            <div>{{ account }}</div>
-
             <div data-ng-view id="body">
                 <div class="text-center">Loading <i class="fa fa-spinner fa-spin fa-lg"></i></div>
             </div>
@@ -34,15 +32,9 @@
             <footer data-ng-include="footer" class="navbar navbar-footer" id="footer"></footer>
         </div>
 
-        <!-- 3rd Party Assets -->
-        <script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
-        <script type="text/javascript" src="/js/jquery/jquery-cookie.min.js"></script>
-        <script type="text/javascript" src="/js/tinymce/tinymce.min.js"></script>
-
         <!-- Angular Javascript -->
         <script type="text/javascript" src="/js/angular/angular.min.js"></script>
         <script type="text/javascript" src="/js/angular-ui/bootstrap.min.js"></script>
-        <script type="text/javascript" src="/js/angular-ui/tinymce.min.js"></script>
 
         <!-- Application -->
         <script type="text/javascript" src="/js/app.min.js"></script>

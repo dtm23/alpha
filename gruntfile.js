@@ -54,7 +54,6 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     'assets/js/app.min.js': ['<%= concat.app.dest %>'],
-                    'assets/js/jquery/jquery.min.js': ['src/vendor/jquery/jquery.js'],
                     'assets/js/angular/angular.min.js': [
                         'src/vendor/angular/angular.js',
                         'src/vendor/angular-route/angular-route.js',
@@ -62,8 +61,7 @@ module.exports = function (grunt) {
                         'src/vendor/angular-resource/angular-resource.js',
                         'src/vendor/angular-sanitize/angular-sanitize.js'
                     ],
-                    'assets/js/angular-ui/bootstrap.min.js': 'src/vendor/angular-bootstrap/ui-bootstrap-tpls.js',
-                    'assets/js/angular-ui/tinymce.min.js': 'src/vendor/angular-ui-tinymce/tinymce.js'
+                    'assets/js/angular-ui/bootstrap.min.js': 'src/vendor/angular-bootstrap/ui-bootstrap-tpls.js'
                 }
             }
         },

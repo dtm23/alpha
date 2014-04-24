@@ -16,8 +16,6 @@ module.exports = function (config) {
         ],
 
         files: [
-            'src/vendor/jquery/jquery.js',
-            'src/vendor/jquery-*/*.js',
             'src/vendor/angular/angular.js',
             'src/vendor/angular-*/*.js',
             'src/front/**/*.js',
