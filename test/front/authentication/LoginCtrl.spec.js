@@ -1,5 +1,5 @@
 describe('Authentication > Login Controller', function() {
-    var ctrl, scope, http, location, cookies;
+    var ctrl, scope, http, location;
 
     beforeEach(module('alpha'));
 
@@ -8,29 +8,27 @@ describe('Authentication > Login Controller', function() {
             scope = $rootScope.$new();
             http = $injector.get('$httpBackend');
             location = $location;
-            cookies = {};
+
+            spyOn(scope, '$emit');
             spyOn(location, 'path');
 
-            ctrl = $controller('LoginCtrl', { $scope: scope, $location: location, $cookies: cookies });
+            ctrl = $controller('LoginCtrl', { $scope: scope, $location: location });
         });
     });
 
     it('should allow you to clear errors', function() {
         scope.error = true;
-
         scope.clear();
-
         expect(scope.error).toBeFalsy();
     });
 
     it('should allow you to login if authentication information is correct', function() {
-        http.expectPOST('/api/auth/login', {username: "andrew", password: "qwerty" }).respond(200, { authorised: true });
+        var account = { forename: "Andrew", surname: "Cunliffe" };
+        http.expectPOST('/api/auth/login', {username: "andrew", password: "qwerty" }).respond(200, account);
         scope.submit({ username: "andrew", password: "qwerty" });
         http.flush();
 
-        expect(cookies.account).toBeDefined();
-        expect(cookies.account.authorised).toBeTruthy();
-
+        expect(scope.$emit).toHaveBeenCalledWith('_accountChange', account);
         expect(location.path).toHaveBeenCalledWith('/dashboard');
     });
 

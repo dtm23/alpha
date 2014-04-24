@@ -1,4 +1,4 @@
-var app = angular.module('alpha', ['ngRoute', 'ngResource', 'ngCookies'])
+var app = angular.module('alpha', ['ngRoute', 'ngResource', 'ngCookies', 'ui.bootstrap'])
     .config(['$routeProvider', function($routes) {
         $routes.
             when('/', {
@@ -11,6 +11,9 @@ var app = angular.module('alpha', ['ngRoute', 'ngResource', 'ngCookies'])
             // AUTHENTICATION
             .when('/auth/login', {
                 controller: 'LoginCtrl', templateUrl: 'partials/auth/login.html'
+            })
+            .when('/auth/logout', {
+                controller: 'LogoutCtrl', templateUrl: 'partials/auth/logout.html'
             })
 
             // AUTHORISED

@@ -23,9 +23,6 @@ describe('Authentication > Logout Controller', function() {
 
         it('should allow you to login if authentication information is correct', function() {
             http.flush();
-
-            expect(cookies.account).toBe("");
-
             expect(location.path).toHaveBeenCalledWith('/');
         });
     });
@@ -40,7 +37,6 @@ describe('Authentication > Logout Controller', function() {
 
         it('should flag an error if credentials are not valid', function() {
             http.flush();
-
             expect(location.path).toHaveBeenCalledWith('/dashboard');
         });
     });

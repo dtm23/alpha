@@ -17,17 +17,18 @@ module.exports = function(app) {
                         connection.release();
                         res.send(400, { code: 100, message: "Username or password incorrect" });
                     } else {
-                        var token = uuid.guid(),
+                        var account = rows[0],
+                            token = uuid.guid(),
                             expires = 2 * 60 * 60 * 1000; // ~ 2 hours
                         if(req.body.remember) expires = 365 * 24 * 60 * 60 * 1000; // ~ 1 year
 
-                        connection.query("UPDATE `account` SET `token` = ? WHERE `id` = ?", [ token, rows[0].id ], function(err, rows) {
+                        connection.query("UPDATE `account` SET `token` = ? WHERE `id` = ?", [ token, account.id ], function(err, rows) {
                             connection.release();
                             if(err) {
                                 res.send(500, { code: 200, message: "Database error has occurred with code '" + err.code + " (" + err.errno + ")'" });
                             } else {
                                 res.cookie('authentication', { username: req.body.username, token: token }, { maxAge: expires });
-                                res.send(201);
+                                res.send(200, account);
                             }
                         });
                     }
