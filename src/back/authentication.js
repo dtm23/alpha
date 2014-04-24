@@ -3,7 +3,7 @@ var crypto = require('crypto'),
 
 module.exports = function(app) {
     return {
-        login: function(req, res){
+        login: function(req, res) {
             var db = app.get('DB:connection');
 
             db.getConnection(function(err, connection) {
@@ -34,6 +34,25 @@ module.exports = function(app) {
                     }
                 });
             });
+        },
+        logout: function(req, res) {
+            var authentication = req.cookies.authentication;
+            if(authentication.username) {
+                var db = app.get('DB:connection');
+                db.getConnection(function(err, connection) {
+                    connection.query("UPDATE `account` SET `token` = NULL WHERE `username` = ?", [ authentication.username ], function (err) {
+                        connection.release();
+                        if (err) {
+                            res.send(500, { code: 201, message: "Database error has occurred with code '" + err.code + " (" + err.errno + ")'" });
+                        } else {
+                            res.cookie('authentication', '');
+                            res.send(202);
+                        }
+                    });
+                });
+            } else {
+                res.send(202);
+            }
         }
     };
 };

@@ -10,5 +10,6 @@ module.exports = function(app) {
 
     //   AUTHENTICATION
     app.post('/api/auth/login', auth.login);
+    app.post('/api/auth/logout', auth.logout);
 
 };
