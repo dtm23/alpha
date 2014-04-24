@@ -8,6 +8,19 @@
         "test": "grunt test"
     },
     "dependencies": {
+        "express": "latest",
+        "mysql": "*",
+        "ejs": "*",
+        "morgan": "*",
+        "body-parser": "*",
+        "compression": "*",
+        "method-override": "*",
+        "cookie-parser": "*",
+        "express-session": "*",
+        "errorhandler": "*"
+    },
+    "devDependencies": {
+        "grunt": "latest",
         "grunt-cli": "latest",
         "grunt-bower-task": "latest",
         "grunt-contrib-concat": "latest",
@@ -20,13 +33,6 @@
         "grunt-express-server": "latest",
         "grunt-concurrent": "latest",
         "grunt-karma-coveralls": "latest",
-
-        "grunt": "latest",
-        "express": "latest",
-        "mysql": "*",
-        "ejs": "*"
-    },
-    "devDependencies": {
         "grunt-contrib-copy": "latest",
         "karma-jasmine": "~0.2.0",
         "karma-phantomjs-launcher": "^0.1.2",
