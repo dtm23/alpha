@@ -20,6 +20,9 @@ var app = angular.module('alpha', ['ngRoute', 'ngResource', 'ngCookies', 'ui.boo
             .when('/dashboard', {
                 controller: 'DashboardCtrl', templateUrl: 'partials/under-construction.html'
             })
+            .when('/account', {
+                templateUrl: 'partials/account/profile.html'
+            })
 
             // ERROR HANDLING
             .when('/not-found', {

@@ -38,7 +38,7 @@ module.exports = function (grunt) {
                 options: {
                     banner: '<%= meta.modules %>\n'
                 },
-                src: ['src/front/**/*.js'],
+                src: ['src/front/app.js', 'src/front/**/*.js'],
                 dest: 'src/vendor/app/public.js'
             }
         },
