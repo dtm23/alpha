@@ -4,8 +4,6 @@
 
 // Code compilation
 logs
-assets/css
-assets/js
 src/vendor
 
 // Package management
