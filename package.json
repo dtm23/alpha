@@ -8,6 +8,7 @@
         "test": "grunt test"
     },
     "dependencies": {
+        "grunt": "latest",
         "express": "latest",
         "mysql": "*",
         "ejs": "*",
@@ -20,7 +21,6 @@
         "errorhandler": "*"
     },
     "devDependencies": {
-        "grunt": "latest",
         "grunt-cli": "latest",
         "grunt-bower-task": "latest",
         "grunt-contrib-concat": "latest",
